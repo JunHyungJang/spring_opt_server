@@ -1,0 +1,26 @@
+server:
+  port: 8989
+  tomcat:
+    threads:
+      max: 500
+
+
+spring:
+  application:
+    name: opt-server
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/study_db?serverTimezone=Asia/Seoul
+    username: root
+    password: "!kevin0459"
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
+
+# prometheus
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "prometheus"
