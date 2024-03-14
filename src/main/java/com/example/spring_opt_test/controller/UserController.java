@@ -8,6 +8,7 @@ import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,7 +24,7 @@ public class UserController {
     public UserController(Environment env, UserService userService) {
         this.userService = userService;
     }
-    @GetMapping("/hello")
+    @GetMapping("/createcol")
     public String status() {
         UserDto userdto = new UserDto();
 
@@ -35,4 +36,20 @@ public class UserController {
         }
         return "HELLO";
     }
+    @GetMapping("/getuser")
+    public UserDto getUser() {
+
+        Long id = 11L;
+//        String name = "name9";
+//        UserDto userDto = userService.getUserByName(name);
+//        return userDto;
+        UserDto userDto = userService.getUserById(id);
+        return userDto;
+    }
+
+//    @PostMapping("/getuser")
+//    public void getUser() {
+//
+//    }
+
 }

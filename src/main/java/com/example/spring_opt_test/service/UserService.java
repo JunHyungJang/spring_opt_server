@@ -5,5 +5,7 @@ import com.example.spring_opt_test.dto.UserDto;
 public interface UserService {
 
     UserDto createUser(UserDto userDto);
+    UserDto getUserByName(String name);
+    UserDto getUserById(Long id);
 
 }
